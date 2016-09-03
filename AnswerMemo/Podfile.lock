@@ -1,0 +1,19 @@
+PODS:
+  - AVOSCloud (3.2.9)
+  - AVOSCloudCrashReporting (3.2.9):
+    - AVOSCloud
+  - YYText (1.0.5)
+
+DEPENDENCIES:
+  - AVOSCloud
+  - AVOSCloudCrashReporting
+  - YYText
+
+SPEC CHECKSUMS:
+  AVOSCloud: b020009b1f2e35c271d4d019075458c879fc1d21
+  AVOSCloudCrashReporting: a3087633af4cc319600a0698d388b6ac3005859b
+  YYText: ac09660c9ccd9b817f409a20caa6f5587444d2ae
+
+PODFILE CHECKSUM: 3c6ec184d10f964a5490e59e51d57732fb2c3c07
+
+COCOAPODS: 1.0.1
