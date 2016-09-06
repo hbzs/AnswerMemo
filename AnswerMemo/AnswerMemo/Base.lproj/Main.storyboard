@@ -1,26 +1,127 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="16A313a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pqH-dm-oVV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--忆答-->
+        <scene sceneID="Ls9-pK-cK8">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <tableViewController id="7D1-hK-yEf" customClass="QuestionListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="U5w-7B-eRX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionCellIdentifier" id="ZZP-rp-HKk" customClass="QuestionTableViewCell">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZZP-rp-HKk" id="FeJ-jo-kzS">
+                                    <frame key="frameInset" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="问题正在加载中…" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gF8-P6-9Xt">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gF8-P6-9Xt" firstAttribute="centerY" secondItem="FeJ-jo-kzS" secondAttribute="centerY" id="ujl-cV-L4N"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="gF8-P6-9Xt" secondAttribute="leading" id="zpc-yk-hUW"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7D1-hK-yEf" id="6i2-DM-eLY"/>
+                            <outlet property="delegate" destination="7D1-hK-yEf" id="DQk-zS-sJD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="忆答" id="e7R-yS-mhn">
+                        <barButtonItem key="rightBarButtonItem" title="添加问答" id="Fdh-ou-REP">
+                            <connections>
+                                <segue destination="rCR-2t-qxv" kind="show" id="kp6-rU-kA8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mMU-44-tNE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="122" y="138"/>
+        </scene>
+        <!--添加问题-->
+        <scene sceneID="fU2-7Y-cbB">
+            <objects>
+                <viewController id="rCR-2t-qxv" customClass="QADetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Fi-Ig-QMS"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bj7-Rk-NGI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6lr-Fd-ndv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jct-ou-Vdm" userLabel="QuestionView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcK-yb-alg" userLabel="AnswerView">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTg-Q6-icm" customClass="YYTextView">
+                                        <color key="backgroundColor" red="0.1931050717830658" green="0.22292983531951904" blue="0.28541535139083862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="bTg-Q6-icm" firstAttribute="top" secondItem="gcK-yb-alg" secondAttribute="top" id="aTQ-dQ-Un3"/>
+                                    <constraint firstItem="bTg-Q6-icm" firstAttribute="leading" secondItem="gcK-yb-alg" secondAttribute="leading" id="cCg-qN-4is"/>
+                                    <constraint firstAttribute="trailing" secondItem="bTg-Q6-icm" secondAttribute="trailing" id="lDb-j3-ZkD"/>
+                                    <constraint firstAttribute="bottom" secondItem="bTg-Q6-icm" secondAttribute="bottom" id="uV5-st-k9e"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gcK-yb-alg" firstAttribute="top" secondItem="6Fi-Ig-QMS" secondAttribute="bottom" id="6Nl-eU-kgB"/>
+                            <constraint firstItem="gcK-yb-alg" firstAttribute="width" secondItem="jct-ou-Vdm" secondAttribute="width" id="ORS-RF-Rwl"/>
+                            <constraint firstItem="Bj7-Rk-NGI" firstAttribute="top" secondItem="jct-ou-Vdm" secondAttribute="bottom" id="RDD-a8-WbH"/>
+                            <constraint firstItem="jct-ou-Vdm" firstAttribute="top" secondItem="6Fi-Ig-QMS" secondAttribute="bottom" id="XfA-Jy-1cr"/>
+                            <constraint firstItem="jct-ou-Vdm" firstAttribute="width" secondItem="6lr-Fd-ndv" secondAttribute="width" id="fEf-8c-dTV"/>
+                            <constraint firstItem="gcK-yb-alg" firstAttribute="leading" secondItem="jct-ou-Vdm" secondAttribute="trailing" id="ono-bW-zJm"/>
+                            <constraint firstItem="Bj7-Rk-NGI" firstAttribute="top" secondItem="gcK-yb-alg" secondAttribute="bottom" id="rG4-nO-Gck"/>
+                            <constraint firstItem="jct-ou-Vdm" firstAttribute="leading" secondItem="6lr-Fd-ndv" secondAttribute="leading" id="yPK-P5-2WT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="添加问题" id="imd-Jy-2By">
+                        <barButtonItem key="rightBarButtonItem" title="下一步" id="sly-eW-PPz"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="answerTextView" destination="bTg-Q6-icm" id="CSK-B1-mMq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O85-ev-OSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="136.26760563380282"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tER-Cy-VPT">
+            <objects>
+                <navigationController id="pqH-dm-oVV" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pej-N7-BPL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7D1-hK-yEf" kind="relationship" relationship="rootViewController" id="LUf-kZ-oeQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wnA-VE-Xq6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-831" y="138"/>
         </scene>
     </scenes>
 </document>

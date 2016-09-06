@@ -1,0 +1,6 @@
+framework module Pods_AnswerMemo {
+  umbrella header "Pods-AnswerMemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
